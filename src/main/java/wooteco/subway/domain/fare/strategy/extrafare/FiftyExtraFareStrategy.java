@@ -1,21 +1,15 @@
 package wooteco.subway.domain.fare.strategy.extrafare;
 
+import org.springframework.stereotype.Component;
 import wooteco.subway.domain.Distance;
 
+@Component
 public final class FiftyExtraFareStrategy extends ExtraFareStrategy {
 
-    private static final ExtraFareStrategy INSTANCE = new FiftyExtraFareStrategy();
     private static final int MIN_DISTANCE = 51;
     private static final int DISTANCE_OF_EXTRA_FARE = 50;
     private static final int STANDARD_DISTANCE_FOR_EXTRA_FARE = 8;
     private static final int BASIC_EXTRA_FARE = 800;
-
-    private FiftyExtraFareStrategy() {
-    }
-
-    public static ExtraFareStrategy getInstance() {
-        return INSTANCE;
-    }
 
     @Override
     boolean isMatch(final int distance) {
